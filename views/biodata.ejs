@@ -1,0 +1,53 @@
+
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js">
+    </head>
+
+
+    <body style="background-image: url(img.jpg);">
+    <div class="container mt-5">
+    <a href="/"><button type="button" class="btn btn-primary btn-lg" >Add Data</button></a>
+    </div>
+    <div class="container">
+    <table class="table table-dark table-striped mt-3">
+        <thead>
+            <tr>
+                <th scope="col">FirstName</th>
+                <th scope="col">LastName</th>
+                <th scope="col">Email</th>
+                <th scope="col">Phone</th>
+                <th scope="col">DOB</th>
+                <th scope="col">Gender</th>
+                <th scope="col">Address</th>
+                <th scope="col">Hobbies</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%if (data.length >0){ %>
+            <% data.forEach(function(student){ %>
+            <tr>
+              <td><%= student.fname %></td>
+              <td><%= student.lname %></td>
+              <td><%= student.email %></td>
+              <td><%= student.phone %></td>
+              <td><%= student.date %></td>
+              <td><%= student.gender %></td>
+              <td><%= student.address %></td>
+              <td><%= student.hobby %></td>
+            </tr>
+            <% })}else{ %>
+              <tr>
+                  <td colspan="6">No Record Found</td>
+                  
+                </tr>
+              <% } %>
+          </tbody>
+    </table>
+    </div>
+    </body>
+
+</html>
+
